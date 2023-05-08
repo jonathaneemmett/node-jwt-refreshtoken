@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
 
@@ -52,17 +52,18 @@ const LoginScreen = () => {
 			setPassword('');
 			navigate(from, { replace: true });
 		} catch (err: any) {
-			console.error(err.message);
+			if (!err?.response) {
+				setErrorMsg('No server response. Please try again later.');
+			} else {
+				setErrorMsg(err.response.data.message);
+			}
+
+			errRef.current?.focus();
 		}
 	}
 
 	return (
 		<section className='loginSection'>
-			<p
-				ref={errRef}
-				className={errorMsg ? 'errorMsg' : 'visually-hidden'}>
-				{errorMsg}
-			</p>
 			<h1>Sign In</h1>
 			<form onSubmit={handleSubmit}>
 				<div className='form-group'>
@@ -104,6 +105,23 @@ const LoginScreen = () => {
 					Login
 				</button>
 			</form>
+			<p
+				ref={errRef}
+				className={errorMsg ? 'errorMsg' : 'visually-hidden'}>
+				{errorMsg}
+			</p>
+			<div className='demoCredentials'>
+				<div className='credentials'>
+					<h3>Demo User</h3>
+					<p>Email: user@demo.com</p>
+					<p>Password: user</p>
+				</div>
+				<div className='credentials'>
+					<h3>Demo Admin</h3>
+					<p>Email: admin@demo.com</p>
+					<p>Password: admin</p>
+				</div>
+			</div>
 		</section>
 	);
 };
