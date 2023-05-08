@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+	--primary-color: #151515;
+	--secondary-color: #008080;
+	--white-color: #ccc;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100vh;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	cursor: pointer;
+}
+
+input {
+	outline: none;
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100vh;
+	width: 100%;
+}
+
+.loginSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.loginSection h1 {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+	max-width: 350px;
+	padding: 1rem;
+}
+
+.form-group {
+	margin-bottom: 0.5rem;
+	width: 100%;
+}
+
+.form-group label {
+	display: block;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 1rem 0.75rem;
+	font-size: 1rem;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	background-clip: padding-box;
+	border: 1px solid var(--white-color);
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn {
+	width: 100%;
+	padding: 1rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+}
+
+.btn-primary {
+	color: var(--white-color);
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+}
