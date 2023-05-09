@@ -3,24 +3,22 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon index.js"
+		"server": "npm start --prefix backend index.js",
+		"client-react": "npm start --prefix react-frontend",
+		"client-svelteKit": "npm run dev --prefix svelte-frontend -- --open",
+		"dev-react": "concurrently \"npm run server\" \"npm run client-react\"",
+		"dev-svelteKit": "concurrently \"npm run server\" \"npm run client-svelteKit\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"argon2": "^0.30.3",
-		"cookie-parser": "^1.4.6",
-		"cors": "^2.8.5",
-		"dotenv": "^16.0.3",
-		"express": "^4.18.2",
-		"jsonwebtoken": "^9.0.0",
-		"mongoose": "^7.1.0"
+		"body-parser": "^1.20.2",
+		"cors": "^2.8.5"
 	},
 	"devDependencies": {
-		"nodemon": "^2.0.22"
+		"concurrently": "^8.0.1"
 	}
 }

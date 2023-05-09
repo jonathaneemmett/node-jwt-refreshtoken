@@ -62,6 +62,7 @@ export async function register(req, res, next) {
 		user: {
 			id: user._id,
 			email: user.email,
+			role: user.role,
 		},
 	});
 }
@@ -123,13 +124,14 @@ export async function login(req, res, next) {
 		user: {
 			id: user._id,
 			email: user.email,
+			role: user.role,
 		},
 	});
 }
 
 export async function logout(req, res, next) {
 	// Clear refresh token and context
-	req.cookie('refreshToken', '', {
+	res.cookie('refreshToken', '', {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'strict',
@@ -137,7 +139,7 @@ export async function logout(req, res, next) {
 		maxAge: 0,
 	});
 
-	req.cookie('context', '', {
+	res.cookie('context', '', {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'strict',
