@@ -3,13 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"server": "npm start --prefix backend index.js",
-		"client-react": "npm start --prefix react-frontend",
-		"client-svelteKit": "npm run dev --prefix svelte-frontend -- --open",
-		"dev-react": "concurrently \"npm run server\" \"npm run client-react\"",
-		"dev-svelteKit": "concurrently \"npm run server\" \"npm run client-svelteKit\""
+		"start": "nodemon index.js"
 	},
 	"keywords": [],
 	"author": "",

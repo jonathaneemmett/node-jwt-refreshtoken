@@ -1,0 +1,21 @@
+{
+	"name": "jwt-refreshtoken",
+	"version": "1.0.0",
+	"description": "Implementation of React with the Node JWT and refreshtoken api authentication and authorization.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"server": "npm start --prefix backend index.js",
+		"client-react": "npm start --prefix react-frontend",
+		"client-svelteKit": "npm run dev --prefix svelte-frontend -- --open",
+		"dev-react": "concurrently \"npm run server\" \"npm run client-react\"",
+		"dev-svelteKit": "concurrently \"npm run server\" \"npm run client-svelteKit\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"concurrently": "^8.0.1",
+		"nodemon": "^2.0.22"
+	}
+}
