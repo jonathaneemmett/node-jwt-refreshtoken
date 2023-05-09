@@ -32,11 +32,12 @@ const LoginScreen = () => {
 
 		try {
 			const res = await axios.post(
-				'http://localhost:5100/users/login',
+				'/users/login',
 				JSON.stringify({ email, password }),
 				{
 					headers: {
 						'Content-Type': 'application/json',
+						'Access-Control-Allow-Origin': '*',
 						withCredentials: true,
 					},
 				},
@@ -50,9 +51,10 @@ const LoginScreen = () => {
 			setAuth({ user, token });
 			setEmail('');
 			setPassword('');
-			navigate(from, { replace: true });
+			navigate(from);
 		} catch (err: any) {
 			if (!err?.response) {
+				console.log(err.message);
 				setErrorMsg('No server response. Please try again later.');
 			} else {
 				setErrorMsg(err.response.data.message);

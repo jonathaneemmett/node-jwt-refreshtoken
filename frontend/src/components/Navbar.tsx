@@ -20,7 +20,7 @@ const Navbar = () => {
 		e.preventDefault();
 
 		try {
-			await axios.post('http://localhost:5100/users/logout', {
+			await axios.post('/users/logout', {
 				withCredentials: true,
 			});
 
@@ -43,11 +43,13 @@ const Navbar = () => {
 						<li>
 							<Link to='/profile'>Profile</Link>
 						</li>
-						<li>
-							{user?.role === 'admin' && (
+
+						{user?.role === 'admin' && (
+							<li>
 								<Link to='/admin'>Admin</Link>
-							)}
-						</li>
+							</li>
+						)}
+
 						<li>
 							<button
 								className='logoutBtn'

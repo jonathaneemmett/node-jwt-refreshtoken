@@ -10,7 +10,7 @@ const RequireAuth = ({ roles }: Props) => {
 	const location = useLocation();
 	const user = auth?.user;
 	const userRole = auth?.user?.role;
-	console.log(user, userRole);
+
 	return roles.includes(userRole) ? (
 		<Outlet />
 	) : user ? (

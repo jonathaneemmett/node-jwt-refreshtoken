@@ -114,7 +114,7 @@ nav ul li a:hover {
 	color: var(--secondary-color);
 }
 
-.loginSection {
+section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -122,7 +122,7 @@ nav ul li a:hover {
 	width: 100%;
 }
 
-.loginSection h1 {
+section h1 {
 	margin-bottom: 1rem;
 	font-size: 2rem;
 	font-weight: 700;
@@ -158,6 +158,18 @@ form {
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/* Unauthorized */
+.unauthorized {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+}
+
+/* Buttons */
 
 .btn {
 	width: 100%;

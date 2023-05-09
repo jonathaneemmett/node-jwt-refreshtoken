@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AdminScreen = () => {
-	return <div>AdminScreen</div>;
+	return <div>Admin Screen</div>;
 };
 
 export default AdminScreen;

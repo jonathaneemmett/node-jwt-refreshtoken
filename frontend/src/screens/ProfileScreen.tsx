@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProfileScreen = () => {
-	return <div>ProfileScreen</div>;
+	return <div>Profile Screen</div>;
 };
 
 export default ProfileScreen;
