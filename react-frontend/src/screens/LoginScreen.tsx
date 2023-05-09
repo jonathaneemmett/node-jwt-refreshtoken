@@ -51,7 +51,7 @@ const LoginScreen = () => {
 			setAuth({ user, token });
 			setEmail('');
 			setPassword('');
-			navigate(from);
+			navigate(from, { replace: true });
 		} catch (err: any) {
 			if (!err?.response) {
 				console.log(err.message);

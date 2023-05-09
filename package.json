@@ -6,15 +6,19 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"server": "npm start --prefix backend index.js",
-		"client": "npm start --prefix frontend",
-		"dev": "concurrently \"npm run server\" \"npm run client\""
+		"client-react": "npm start --prefix react-frontend",
+		"client-svelteKit": "npm run dev --prefix svelte-frontend -- --open",
+		"dev-react": "concurrently \"npm run server\" \"npm run client-react\"",
+		"dev-svelteKit": "concurrently \"npm run server\" \"npm run client-svelteKit\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"body-parser": "^1.20.2",
-		"concurrently": "^8.0.1",
 		"cors": "^2.8.5"
+	},
+	"devDependencies": {
+		"concurrently": "^8.0.1"
 	}
 }
