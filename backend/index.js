@@ -16,7 +16,13 @@ const app = express();
 // Connect Database
 connectDB();
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+	cors({
+		origin: true,
+		credentials: true,
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+	}),
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());

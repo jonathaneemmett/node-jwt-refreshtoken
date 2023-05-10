@@ -17,6 +17,20 @@ Set these values in the .env
 
 From the root you can run:
 
-    npm run dev
+    npm run dev-react
+
+or
+
+    npm run dev-svelteKit
 
 This will run the front and backend since concurrently is installed.
+
+Live Demos can be found here
+
+    For React:
+
+    https://node-jwt-refreshtoken-react.vercel.app/
+
+    For SvelteKit:
+
+    coming soon!
