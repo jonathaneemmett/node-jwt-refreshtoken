@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Context
+import { AuthProvider } from './context/AuthProvider';
+
 // Routes
 import {
 	createBrowserRouter,
@@ -16,6 +19,11 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import MissingScreen from './screens/MissingScreen';
+import AdminScreen from './screens/AdminScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import UnauthorizedScreen from './screens/UnauthorizedScreen';
+
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -23,9 +31,19 @@ const router = createBrowserRouter(
 			{/* Public Routes */}
 			<Route index={true} path='/' element={<HomeScreen />} />
 			<Route path='/login' element={<LoginScreen />} />
+			<Route path='/unauthorized' element={<UnauthorizedScreen />} />
 
 			{/* Protected Routes */}
-
+			<Route element={<ProtectedRoute roles={['user']} />}>
+				<Route
+					index={true}
+					path='/profile'
+					element={<ProfileScreen />}
+				/>
+			</Route>
+			<Route element={<ProtectedRoute roles={['admin']} />}>
+				<Route index={true} path='/admin' element={<AdminScreen />} />
+			</Route>
 			{/* Missing */}
 			<Route path='*' element={<MissingScreen />} />
 		</Route>,
@@ -37,7 +55,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<AuthProvider>
+			<RouterProvider router={router} />
+		</AuthProvider>
 	</React.StrictMode>,
 );
 
