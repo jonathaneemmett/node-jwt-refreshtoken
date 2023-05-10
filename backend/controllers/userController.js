@@ -42,16 +42,16 @@ export async function register(req, res, next) {
 	res.cookie('refreshToken', refreshToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
 	res.cookie('context', context.contextToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -104,16 +104,16 @@ export async function login(req, res, next) {
 	res.cookie('refreshToken', refreshToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
 	res.cookie('context', context.contextToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -135,16 +135,16 @@ export async function logout(req, res, next) {
 	res.cookie('refreshToken', '', {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 0,
 	});
 
 	res.cookie('context', '', {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 0,
 	});
 
@@ -208,16 +208,16 @@ export async function refreshToken(req, res, next) {
 	res.cookie('refreshToken', newRefreshToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
 	res.cookie('context', newContext.contextToken, {
 		path: '/',
 		httpOnly: true,
-		sameSite: 'strict',
-		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'none',
+		secure: true,
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
