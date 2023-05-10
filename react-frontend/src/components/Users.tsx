@@ -36,7 +36,6 @@ const Users = () => {
 
 		return () => {
 			isMounted = false;
-			if (controller) controller.abort();
 		};
 	}, []);
 
