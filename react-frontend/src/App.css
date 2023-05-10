@@ -153,6 +153,24 @@ section {
 	color: var(--primary-text-color);
 }
 
+.userDemo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	gap: 0.25rem;
+}
+
+.credentials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+}
+
 /* Buttons */
 
 .btn {

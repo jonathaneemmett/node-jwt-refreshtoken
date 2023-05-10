@@ -106,6 +106,19 @@ const LoginScreen = () => {
 					className={error ? 'error' : 'visually-hidden'}>
 					{error}
 				</p>
+				<p>For a demo, use the following credentials:</p>
+				<div className='userDemo'>
+					<div className='credentials'>
+						<p>Demo User</p>
+						<p>Email: user@demo.com</p>
+						<p>Password: user</p>
+					</div>
+					<div className='credentials'>
+						<p>Admin User</p>
+						<p>Email: admin@demo.com</p>
+						<p>Password: admin</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
