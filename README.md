@@ -2,9 +2,9 @@
 
 Implementation of React with the Node JWT and refreshtoken api authentication and authorization.
 
-Clone this repo, then run npm i
+Clone this repo, then run this in the root directory
 
-    npm i
+    npm run setUp
 
 Set your .env file in backend.
 
@@ -15,7 +15,19 @@ Set these values in the .env
     MONGO_URI='YOUR_MONGO_URI'
     JWT_SECRET='YOUR_JWT_SECRET'
 
-From the root you can run:
+Set the .env file in both front end folders.
+
+    cd react-frontend && mv example.env .env
+
+    cd svelteKit-frontend && mv example.env .env
+
+Set the values for respective .env
+
+    REACT_APP_API_SERVER="YOUR_LOCAL_SERVER_URL" // local this would be http://localhost:5100
+
+    API_SERVER="YOUR_LOCAL_SERVER_URL" // local this would be http://localhost:5100
+
+then from the root you can run:
 
     npm run dev-react
 

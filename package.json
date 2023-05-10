@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"setUp": "npm i --prefix backend && npm i --prefix react-frontend && npm i --prefix svelte-frontend",
 		"server": "npm start --prefix backend index.js",
 		"client-react": "npm start --prefix react-frontend",
 		"client-svelteKit": "npm run dev --prefix svelte-frontend -- --open",

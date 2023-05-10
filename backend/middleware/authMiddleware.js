@@ -6,7 +6,6 @@ import {
 import User from '../models/User.js';
 
 export async function tokenHandler(req, res, next) {
-	return res.status(200).json({ success: true, message: req.cookies });
 	const { context, refreshToken } = req.cookies;
 
 	if (!context || !refreshToken)
