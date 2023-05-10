@@ -1,7 +1,12 @@
-import React from 'react';
+import Users from '../components/Users';
 
 const AdminScreen = () => {
-	return <div>AdminScreen</div>;
+	return (
+		<section>
+			<h2>Admin Screen</h2>
+			<Users />
+		</section>
+	);
 };
 
 export default AdminScreen;

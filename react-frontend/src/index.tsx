@@ -34,7 +34,7 @@ const router = createBrowserRouter(
 			<Route path='/unauthorized' element={<UnauthorizedScreen />} />
 
 			{/* Protected Routes */}
-			<Route element={<ProtectedRoute roles={['user']} />}>
+			<Route element={<ProtectedRoute roles={['user', 'admin']} />}>
 				<Route
 					index={true}
 					path='/profile'

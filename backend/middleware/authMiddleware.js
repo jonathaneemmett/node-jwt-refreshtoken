@@ -64,14 +64,15 @@ export async function tokenHandler(req, res, next) {
 export async function adminHandler(req, res, next) {
 	const { user } = req;
 	if (!user)
-		return res
-			.status(401)
-			.json({ success: false, message: 'Unauthorized.' });
+		return res.status(401).json({
+			success: false,
+			message: 'Not even logged in, unauthorized.',
+		});
 
-	if (!user.isAdmin)
+	if (user.role !== 'admin')
 		return res
 			.status(401)
-			.json({ success: false, message: 'Unauthorized.' });
+			.json({ success: false, message: 'Not an admin, unauthorized.' });
 
 	next();
 }

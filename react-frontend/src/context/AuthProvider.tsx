@@ -2,8 +2,11 @@ import { createContext, useState } from 'react';
 import { Props } from '../types/types';
 
 interface Auth {
-	user: {};
-	role: string;
+	user: {
+		_id: string;
+		email: string;
+		role: string;
+	};
 	token: string;
 }
 const AuthContext = createContext({
@@ -12,7 +15,14 @@ const AuthContext = createContext({
 });
 
 export const AuthProvider = ({ children }: Props) => {
-	const [auth, setAuth] = useState({ user: {}, role: '', token: '' });
+	const [auth, setAuth] = useState({
+		user: {
+			_id: '',
+			email: '',
+			role: '',
+		},
+		token: '',
+	});
 
 	return (
 		<AuthContext.Provider value={{ auth, setAuth }}>

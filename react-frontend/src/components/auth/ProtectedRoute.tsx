@@ -5,7 +5,7 @@ import { Roles } from '../../types/types';
 const ProtectedRoute = ({ roles }: Roles) => {
 	const { auth } = useAuth();
 	const location = useLocation();
-	const userRole = auth?.role as string;
+	const userRole = auth?.user?.role as string;
 	const user = auth?.user;
 
 	return roles.includes(userRole) ? (

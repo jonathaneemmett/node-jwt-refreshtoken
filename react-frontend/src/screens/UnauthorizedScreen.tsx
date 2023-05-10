@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UnauthorizedScreen = () => {
-	return <div>UnauthorizedScreen</div>;
+	return <section>Unauthorized Screen</section>;
 };
 
 export default UnauthorizedScreen;
