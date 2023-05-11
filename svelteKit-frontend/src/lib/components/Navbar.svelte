@@ -67,5 +67,11 @@
         border: none;
         outline: none;
         cursor: pointer;
+        font-size: 1.1rem;
+        color: var(--primary-text-color);
+    }
+
+    .navbar button:hover {
+        color: var(--secondary-text-color);
     }
 </style>
