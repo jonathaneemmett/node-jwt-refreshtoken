@@ -43,7 +43,7 @@ export async function register(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -51,7 +51,7 @@ export async function register(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -105,7 +105,7 @@ export async function login(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -113,7 +113,7 @@ export async function login(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -136,7 +136,7 @@ export async function logout(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 0,
 	});
 
@@ -144,7 +144,7 @@ export async function logout(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 0,
 	});
 
@@ -209,7 +209,7 @@ export async function refreshToken(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
@@ -217,7 +217,7 @@ export async function refreshToken(req, res, next) {
 		path: '/',
 		httpOnly: true,
 		sameSite: 'none',
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 		maxAge: 60 * 60 * 24 * 1, // 1 day
 	});
 
